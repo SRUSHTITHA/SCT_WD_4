@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>📋 A Smart To-Do List</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search tasks..." />
+      <select id="filterStatus">
+        <option value="all">All</option>
+        <option value="completed">✅ Completed</option>
+        <option value="pending">🕒 Pending</option>
+      </select>
+      <select id="sortBy">
+        <option value="date">Sort by Date</option>
+        <option value="priority">Priority</option>
+        <option value="category">Category</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Task title" />
+      <textarea id="taskNotes" placeholder="Task notes (optional)"></textarea>
+      <select id="taskCategory">
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Study">Study</option>
+      </select>
+      <select id="taskPriority">
+        <option value="Low">🟢 Low</option>
+        <option value="Medium">🟡 Medium</option>
+        <option value="High">🔴 High</option>
+      </select>
+      <select id="taskRepeat">
+        <option value="none">No Repeat</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+      <input type="datetime-local" id="taskDateTime" />
+      <button onclick="addTask()">➕ Add Task</button>
+      <button onclick="startVoiceInput()">🎤 Voice Input</button>
+    </div>
+
+    <div id="progressContainer">
+      <div id="progressBar"></div>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <audio id="completeSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9a6a0aa624.mp3?filename=success-1-6297.mp3"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
